@@ -6,6 +6,8 @@ from joblib import load
 # Load the model from the file
 model =load("titanic_survival_prediction_model.pkl")
 
+with open('style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html = True)
 # Function to make predictions
 def predict_survival(pclass, sex):
     # Convert sex to binary
